@@ -1,8 +1,220 @@
+#include<iostream>
+using namespace std;
+
+ class stringusing
+ {
+ public :
+   aadharid()
+    {
+        string name;
+        cout << "\n Enter the name  :";
+        cin >> name;
+        cout <<"\n hi.." << name << endl;
+
+            cout <<name << " welcome to aadhar website";
+        }
+    aadharid(int age)
+
+    {
+
+        if (age>=5)
+        {
+        cout <<"\n\t you are eligible for biometric";
+        }
+        else
+        {
+            cout << "\n\t age does't match";
+        }
+    }
+    aadharid(string name,int age)
+    {
+        cout <<"\nhi.." << name << endl;
+            cout << name << "\nwelcome to aadhar";
+    {
+
+        if (age>=5)
+        {
+        cout <<"\nyou are eligible for biometric";
+        }
+        else
+        {
+            cout << "\nage does't support......sorry";
+        }
+    }
+    }
+ };
+
+int main()
+{
+    stringusing su;
+    su.aadharid();
+    int age;
+    cout << "\nenter the age";
+    cin >> age;
+    su.aadharid(age);
+    string name;
+    cout << "\nenter the name....:";
+    cin >>name;
+    cout << "\nenter the age...:";
+    cin >> age;
+    su.aadharid(name,age);
+}
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #include<iostream>
+using namespace std;
+
+ class aadharid
+ {
+ public:
+    aadharid()
+    {
+        int age;
+        cout << "Enter the age";
+        cin >> age;
+        if (age>=5)
+        {
+        cout <<"you are eligiple for biometric";
+        }
+        else
+        {
+            cout << "age does't match";
+        }
+    }
+    aadharid(float age)
+    {
+
+    if (age>4.9)
+    {
+        cout <<"\n eligiple for bio";
+    }
+    else
+    {
+        cout <<"age not match";
+    }
+
+
+    }
+
+
+ };
+
+int main()
+{
+    float age;
+    aadharid ai;
+    cout << "\n enter the second age";
+    cin >> age;
+    aadharid a2 (age);
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
+
+
+using namespace std;
+class additon
+{
+public:     //access
+
+    void checkage(int age)
+    {
+        if (age>=18)
+        {
+            cout << "you are eligible";
+
+        }
+        else
+        {
+            cout << "not eligible";
+        }
+    }
+
+};
+
+int main()
+{
+int age;
+    additon ad;
+    cout <<"enter the age";
+    cin >> age;
+    ad.checkage(age);
+}*/
 
 
 
