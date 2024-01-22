@@ -1,6 +1,74 @@
 #include<iostream>
 using namespace std;
 
+class accessspecifiar
+{
+
+private :
+    int amount;
+public :
+    string empname;
+  void setamount(int s)
+    {
+        amount=s;
+    }
+   int getamount()
+   {
+       return amount;
+
+   }
+
+   void tosalary()
+   {
+       cout << amount;
+   }
+};
+int main()
+{
+    accessspecifiar as;
+    as.setamount(500);
+    cout << as.getamount() << endl; //50
+    as.tosalary();
+     if (as.getamount()==500){
+        cout << "its a return type";
+    }
+    if (as.getamount()==500){
+        cout << "its a return type";
+    }
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
+using namespace std;
+
  class stringusing
  {
  public :
@@ -42,23 +110,47 @@ using namespace std;
         }
     }
     }
+     aadharid(string name,int age,string aadharnumber){
+
+     aadharid(name,age);
+
+     cout << "\n your aadhar number" << aadharnumber;
+
+     }
+    aadharid(string name,int age,string  aadharnumber,string phone)
+    {
+
+     aadharid(name,age,aadharnumber);
+    cout << "\n checking the phone number" << phone;
+    }
  };
 
 int main()
 {
     stringusing su;
-    su.aadharid();
+    //su.aadharid();
     int age;
-    cout << "\nenter the age";
+    /*c
+    out << "\nenter the age";
     cin >> age;
-    su.aadharid(age);
-    string name;
+    su.aadharid(age);*/
+    /*string name;
     cout << "\nenter the name....:";
     cin >>name;
     cout << "\nenter the age...:";
     cin >> age;
-    su.aadharid(name,age);
-}
+    //su.aadharid(name,age);
+    string aadharnumber;
+    cout <<"\n enter your aadhar number  :";
+    cin >> aadharnumber;
+    string phone;
+    cout << "\n enter your phone number    :";
+
+    cin >>phone;
+    //su.aadharid(name,age,aadharnumber);
+    su.aadharid(name,age,aadharnumber,phone);
+
+} */
 
 
 
