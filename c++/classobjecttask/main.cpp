@@ -1,4 +1,145 @@
-#include<iostream>
+#include <iostream>
+using namespace std;
+
+class bikes{
+public :
+    string name="bajaj";
+    void typebike()
+    {
+        cout << "welcome to bajaj";
+    }
+};
+class biketype{
+public:
+    string cartype="ri5 version3"
+    void biketype1()
+    {
+        cout << "welcome to v3 version";
+
+    }
+};
+class bike : public bikes,public biketype
+{
+
+
+};
+
+int main ()
+{
+    bike b;
+    cout << b.bikes;
+    cout << b.biketype;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
+using namespace std;
+
+class consoverload
+{
+public:
+    consoverload()
+    {
+     int age;
+     if(age>=18)
+     {
+         cout << "age supported";
+     }
+      else if (age>=50)
+      {
+          cout << "age limited is over";
+      }
+      else
+        cout << "age not supported";
+
+    }
+    consoverload(int a,string name,string game)
+    {
+
+
+
+        switch(a){
+          case 1:
+                for (int j=0;j<1;++j)
+                {
+                    cout <<name<< " is a good boy\n";
+                    cout <<game<< " is fav game\n";
+                }
+
+                break;
+
+          case 2:
+            for (int i=0;i<3;++i)
+            {
+                cout << "he is bad" <<"\n";
+            }
+           break;
+          case 3:
+            for (int i=0;i<3;i++)
+            {
+                cout << "he is arrogant\n";
+            }
+    }
+    }
+};
+int main()
+{
+    //int age;
+    int a;
+    string name;
+    string game;
+    //cout << "enter your age";
+    //cin >> age;
+    cout << "enter your number   :";
+    cin >> a;
+    cout << "enter your name   :";
+    cin >>name;
+    cout << name << " what is your fav game  :";
+    cin >> game;
+
+    //consoverload col;
+    consoverload col1(a,name,game);
+    return 0;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
 using namespace std;
 
 class accessspecifiar
@@ -37,7 +178,7 @@ int main()
     }
     return 0;
 
-}
+}*/
 
 
 
