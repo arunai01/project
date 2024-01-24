@@ -1,21 +1,118 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-class bikes{
-public :
-    string name="bajaj";
-    void typebike()
+class animal{
+private :
+    string name;
+    string color;
+    int weight;
+    string food;
+    string sound;
+    string animaltype;
+public:
+    void setmyname()
     {
-        cout << "welcome to bajaj";
+        cout << "Enter the animal name  :";
+        cin >> name;
+    }
+    string getmyname()
+    {
+        return name;
+    }
+    void setmycolor()
+    {
+        cout <<"\nEnter the color  :";
+        cin >>color;
+    }
+    string getmycolor()
+    {
+        return color;
+    }
+    void setmyweight()
+    {
+        cout <<"\nenter the weight  :";
+        cin >> weight;
+    }
+    int getmyweight()
+    {
+        return weight;
+    }
+    void setmyfood()
+    {
+        cout <<"\nEnter the food item  :";
+        cin >>food;
+    }
+    string getmyfood()
+    {
+
+    string tp;
+        if (food=="grass")
+        {
+            tp ="herbivorous";
+            return tp;      }
+        else
+        {
+            tp ="carnivores";
+            return tp;
+
+        }
     }
 };
+class
+int main()
+{
+    animal a;
+    a.setmyname();
+    a.setmycolor();
+    a.setmyweight();
+    a.setmyfood();
+    cout << "my name is :"<<a.getmyname() << endl;
+    cout << "my color is :" << a.getmycolor() <<endl;
+    cout << "my weight is :" << a.getmyweight() <<endl;
+    cout << "i am " << a.getmyfood();
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include <iostream>
+using namespace std;
+
+class bikes
+{
+    public :
+    string brand="Yamaha\n";
+    void typebike()
+    {
+        cout << "welcome to yamaha\n";
+    }
+};
+
 class biketype{
 public:
-    string cartype="ri5 version3"
-    void biketype1()
+    void biketype1(string model,string version)
     {
-        cout << "welcome to v3 version";
-
+        cout << "you choose " << model <<"\n" ;
+        cout << "you select " <<version <<"\n";
     }
 };
 class bike : public bikes,public biketype
@@ -26,11 +123,19 @@ class bike : public bikes,public biketype
 
 int main ()
 {
+    string model;
+    string version;
     bike b;
-    cout << b.bikes;
-    cout << b.biketype;
+    cout << b.brand;
+    b.typebike();
+    cout <<"select your model type :\n";
+    cin >> model;
+    cout <<"choose the version :";
+    cin >> version;
+    b.biketype1(model,version);
 
-}
+
+}*/
 
 
 
