@@ -41,9 +41,10 @@ public:
     {
         cout <<"\nEnter the food item  :";
         cin >>food;
+
     }
-    string getmyfood()
-    {
+    string getmyfood(){
+    return food;
 
     string tp;
         if (food=="grass")
@@ -57,8 +58,20 @@ public:
 
         }
     }
+
 };
-class
+class animal1:public animal{
+    public :
+ void setmysound(){
+    string s="sound";
+    cout << "enter the sound  :";
+    cin >>s;
+}
+string getmysound()
+{
+    string s;
+}
+};
 int main()
 {
     animal a;
@@ -66,10 +79,32 @@ int main()
     a.setmycolor();
     a.setmyweight();
     a.setmyfood();
+
+    cout << "my name is :"<<a.getmyname() << endl;
+    cout << "my color is :" << a.getmycolor() <<endl;
+    cout << "my weight is :" << a.getmyweight() <<endl;
+    cout << "my food is  :" <<a.getmyfood() <<endl;
+    //cout << "i am " << a.getmyfood1();
+
+
+animal1 a1;
+    a1.setmyname();
+    a1.setmycolor();
+    a1.setmyweight();
+    a1.setmyfood();
+    a1.setmysound();
     cout << "my name is :"<<a.getmyname() << endl;
     cout << "my color is :" << a.getmycolor() <<endl;
     cout << "my weight is :" << a.getmyweight() <<endl;
     cout << "i am " << a.getmyfood();
+    cout << "my sound is :" << a1.getmysound()<<endl;
+
+
+
+
+
+
+
     return 0;
 }
 
@@ -430,7 +465,7 @@ int main()
 
 
 
-/* #include<iostream>
+ /*#include<iostream>
 using namespace std;
 
  class aadharid
