@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 
 class animal{
@@ -44,16 +44,15 @@ public:
 
     }
     string getmyfood(){
-    return food;
 
     string tp;
         if (food=="grass")
         {
-            tp ="herbivorous";
+            tp =" my food is grass i am herbivorous";
             return tp;      }
         else
         {
-            tp ="carnivores";
+            tp =" my carnivores";
             return tp;
 
         }
@@ -62,19 +61,37 @@ public:
 };
 class animal1:public animal{
     public :
- void setmysound(){
-    string s="sound";
-    cout << "enter the sound  :";
-    cin >>s;
-}
-string getmysound()
+                    string s="sound";
+
+         void setmysound(){
+
+            cout << "enter the sound  :";
+            cin >>s;
+        }
+        string getmysound()
+        {
+            return s;
+        }
+};
+class animal2:public animal1{
+public :
+            string atype="animaltype";
+
+    void setmyatype()
+    {
+
+        cout << "enter the animal type";
+        cin >>atype;
+    }
+string getmyatype()
 {
-    string s;
+     return atype;
 }
+
 };
 int main()
 {
-    animal a;
+    /*animal a;
     a.setmyname();
     a.setmycolor();
     a.setmyweight();
@@ -100,13 +117,26 @@ animal1 a1;
     cout << "my sound is :" << a1.getmysound()<<endl;
 
 
+animal2 a2;
+    a2.setmyname();
+    a2.setmycolor();
+    a2.setmyweight();
+    a2.setmyfood();
+    a2.setmysound();
+    a2.setmyatype();
+    cout << "my name is "<<a2.getmyname() << endl;
+    cout << "my color is " << a2.getmycolor() <<endl;
+    cout << "my weight is " << a2.getmyweight() <<endl;
+    cout <<  a2.getmyfood() << endl;
+    cout << "my sound is " << a2.getmysound()<<endl;
+    cout << "i am " <<a2.getmyatype()<<endl;
 
 
 
 
 
     return 0;
-}
+}*/
 
 
 
