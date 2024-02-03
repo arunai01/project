@@ -4,13 +4,15 @@ int main()
 {
 
     string name="arun";
+    string name1;
+    cin >> name1;
+    string a;
     cout << "my name is      :" << name << endl;
     cout << "my name address is :"<< &name << endl;
 
     string *p=&name;
+    string *s=&name1;
     cout << "value of p    :" << *p <<endl;
-
-
 }
 
 
