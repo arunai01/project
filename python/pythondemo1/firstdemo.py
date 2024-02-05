@@ -3,7 +3,7 @@ a=10;
 b=20;
 print(a+b);
 print(a-b);
-print()"""
+print()
 a=int(input("enter the value a :"));
 print (a);
 b= int(input("enter the value :"));
@@ -12,19 +12,26 @@ c=int(input("enter the value c :"));
 print(c);
 print ("Enter the addition value",a+b-c);
 
-'''if a>b :
+
+#if shortcut
+if a>b :
     
     print ("a greater than b ");
 else : 
     print("b greater than a");
-print("a greater than b") if a>b else print("b greater than a")'''
-#print("a greater than b") if a>b else print (" a and b is equal") if a == b else ("b greater than a")
+#elseifshort
 
-'''if a>b and c>a :
+print("a greater than b") if a>b else print("b greater than a")
+
+print("a greater than b") if a>b else print (" a and b is equal") if a == b else ("b greater than a")
+ #and method
+if a>b and c>a :
     print ("both condition same");
+    #or method
 if  a>b or c>a:
-    print ("any one condition is true ")'''
-'''if a < b:
+    print ("any one condition is true ")
+#nested if
+if a < b:
     if a < c and c > a:
         print ("a less  than c");
     elif a>b or c>a:
@@ -32,10 +39,26 @@ if  a>b or c>a:
     else :
         print ("All not match");
 else :
-    print("not match");'''
-
+    print("not match");"""
+#concat
 name=input("Enter your fname :");
 name1=input("enter your sname :");
 print (name);
 print (name1);
 print (name + " " + name1);
+print (name.strip());
+print (name.upper());
+print (name1.lower());
+print (name.title());
+print (name.replace("a" ,"r"));
+#while loop
+i=int (input("enter the value i  :"));
+
+
+while i < 10:
+    print (i);
+    if (i == 10):
+        break
+    i += 1
+
+    
