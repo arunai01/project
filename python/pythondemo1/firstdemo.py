@@ -39,7 +39,7 @@ if a < b:
     else :
         print ("All not match");
 else :
-    print("not match");"""
+    print("not match");
 #concat
 name=input("Enter your fname :");
 name1=input("enter your sname :");
@@ -59,6 +59,39 @@ while i < 10:
     print (i);
     if (i == 10):
         break
-    i += 1
+    i += 1 
+    
 
+fruits=["apple","banana","cherry","orange"]
+for y in fruits:
+    print (y)
+    #looping though a string
+for x in "apple":
+    print (x)
+#breakstatement
+fruits1 =list(input("Fruits name :"))
+#fruits=["apple","orange","banana","lemon","mango"]
+print(fruits1)
+for z in fruits1:
+    print(z)
+    if z == "banana":
+        break
+    
+
+#else in forloop
+
+a=int(input("Enter the input :"))
+for x in range (a):
+    print(x)
+else:
+    print("finished")
+
+a=int(input("Enter the input :"))
+for x in range (a):
+    if x== 3 :break
+    print(x)
+else:
+    print("finished")"""
+
+#nested loop
     
