@@ -69,14 +69,23 @@ for y in fruits:
 for x in "apple":
     print (x)
 #breakstatement
-fruits1 =list(input("Fruits name :"))
+fruits1 =input("Fruits name :").split(",")
 #fruits=["apple","orange","banana","lemon","mango"]
-print(fruits1)
 for z in fruits1:
-    print(z)
+    z1=z.split(" ")
+    print(z1)
+
     if z == "banana":
         break
-    
+fruits1 =input("Fruits name :").split(",")
+for y in fruits1:
+    if y =="cherry":
+        continue
+   
+    z=y.split(",")
+    print(z)
+
+
 
 #else in forloop
 
@@ -91,7 +100,47 @@ for x in range (a):
     if x== 3 :break
     print(x)
 else:
-    print("finished")"""
+    print("finished")
 
-#nested loop
+#class objest
+#the str__ in function
+class person:
+    def __init__(self ,name,age):
+        self.name=name
+        self.age=age
     
+    def __str__(self):
+        return f"{self.name}({self.age})"
+
+        
+a1 = person("Arun",22)
+print(a1)
+
+
+#object methods
+class detail:
+    def __init__(self,name,age,shename):
+        self.name=name
+        self.age=age
+        self.shename=shename
+
+    def myfunc(self):
+        print("my name is" + self.name)
+        print("my age is" , self.age)
+        print("she name is " + self.shename)
+m1 = detail("arun",22,"rathi")
+m1.myfunc()
+#modify object
+m1.age=20
+print (m1.age)"""
+
+car=input("Enter your car name :")
+#bike=input("Enter the bike name :").split(",")
+x= (car.split(","))
+#x.append("rollys royce")
+#x.clear()
+#x.copy()
+#y=x.count("bmw")
+#x.extend(bike)
+x.index("m15")
+print(x)
