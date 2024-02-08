@@ -124,15 +124,15 @@ class detail:
         self.age=age
         self.shename=shename
 
-    def myfunc(self):
-        print("my name is" + self.name)
-        print("my age is" , self.age)
-        print("she name is " + self.shename)
+    def myfunc(abc):
+        print("my name is" +abc.name)
+        print("my age is" ,abc.age)
+        print("she name is " + abc.shename)
 m1 = detail("arun",22,"rathi")
 m1.myfunc()
 #modify object
 m1.age=20
-print (m1.age)"""
+print (m1.age)
 
 car=input("Enter your car name :")
 #bike=input("Enter the bike name :").split(",")
@@ -142,5 +142,17 @@ x= (car.split(","))
 #x.copy()
 #y=x.count("bmw")
 #x.extend(bike)
-x.index("m15")
-print(x)
+#x.index("m15")
+#x.remove("bmw")
+#x.reverse()
+#x.insert(2,"r15")
+#x.pop(2)
+#x.sort()
+
+#print(x)"""
+
+class person:
+    def __init__(self ,name,age):
+        self.name=name
+        self.age=age
+    
