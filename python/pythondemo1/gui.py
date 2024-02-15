@@ -30,33 +30,37 @@ clickme.grid(row=2,column=8,padx=40,pady=40)
 app.mainloop()
 
 
-from tkinter import*
+from tkinter import *
 
-app1=Tk()
-app.title("Arun")"""
+dows=Tk()
 
+dows.title("opetaors")
+dows.geometry("500x500")"""
 
 
 import tkinter as tk
 
 def on_submit():
     user_input = entry.get()
-    result_label.config(text=f"You entered: {user_input}")
+    result_label.config(text=f"i am: {user_input}")
 
 # Create the main window
 window = tk.Tk()
 window.title("Input GUI")
+window.geometry("1366x768")
+window.config(bg="red")
 
 # Create an Entry widget for text input
 entry = tk.Entry(window)
 entry.pack()
 
 # Create a button to submit the input
-submit_button = tk.Button(window, text="Submit", command=on_submit)
+submit_button = tk.Button(window, text="Submit", command=on_submit,font="bold",fg="pink")
 submit_button.pack()
 
 # Create a label to display the result
 result_label = tk.Label(window, text="")
+
 result_label.pack()
 
 # Run the main loop
