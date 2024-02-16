@@ -11,8 +11,8 @@ result=con.cursor()
 #result.execute("show tables")
 # result.execute("select*from arun_data")
 # result.execute("describe arun_data")
-result.execute("update arun_data "set" address = "3/4 thirupur" "where" s_no=2")
-resultshow=result.fetchall()
+# result.execute("update arun_data "set" address = "3/4 thirupur" "where" s_no=2")
+# resultshow=result.fetchall()
 
 for x in resultshow:
     print(x)
