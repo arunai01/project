@@ -84,22 +84,25 @@ btnst.grid(row=8,column=5)
 
 dows.mainloop()"""
 
-
 from tkinter import *
+from tkinter import ttk
+import tkinter as tk
 
 details=Tk()
 
 details.title("Aadhar ID information Details")
 details.geometry("500x500")
+def enter():
+
+    e1=Entry(details)
+    e2=Entry(details)
+    e1.grid(row=1,column=1)
+    e2.grid(row=2,column=1)
+    
 
 
 Label(details,text="Enter your name :").grid(row=1,column=0)
 Label(details,text="Enter Last name ").grid(row=2,column=0)
-e1=Entry(details)
-e2=Entry(details)
-
-e1.grid(row=1,column=1)
-e2.grid(row=2,column=1)
 
 var1=IntVar()
 Checkbutton(details,text="Male",variable=var1).grid(row=3,column=0)
@@ -115,19 +118,37 @@ e3.grid(row=4,column=1)
 menu = Menu(details)
 details.config(menu=menu)
 filemenu = Menu(menu)
-menu.add_cascade(label="Select Your State",menu=filemenu)
-filemenu.add_command(label="Tamilnadu")
-filemenu.add_command(label="Karnataka")
-filemenu.add_command(label="Kerala")
+menu.add_cascade(label="file",menu=filemenu)
+filemenu.add_command(label="new")
+filemenu.add_command(label="open")
+filemenu.add_command(label="edit")
 filemenu.add_separator()
 filemenu.add_command(label='Exit', command=details.quit)
-helpmenu = Menu(menu)
-menu.add_cascade(label='Help', menu=helpmenu)
-helpmenu.add_command(label='About')
+
+
+
+ttk.Label(details,text="Select Your State",
+              font=("Times New Roman",10)).grid(column =0,row=5,padx=10,pady=25)
+
+n=tk.StringVar()
+statechoosen =ttk.Combobox(details,width =27,textvariable= n)
+
+#adding combobox drop list down
+statechoosen['values'] = ("Andhra Pradesh","Arunachal Pradesh ","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli","Daman and Diu","Lakshadweep","National Capital Territory of Delhi","Puducherry")
+statechoosen.grid(column = 1, row = 5) 
+statechoosen.current() 
+
+btnst=Button(details,text="check",command=enter)
+btnst.grid(row=8,column=5)
+
+
+details.mainloop() 
 
 
 
 
+
+"""
 mainloop()
 
 from tkinter import *
@@ -144,4 +165,4 @@ filemenu.add_command(label='Exit', command=root.quit)
 helpmenu = Menu(menu)
 menu.add_cascade(label='Help', menu=helpmenu)
 helpmenu.add_command(label='About')
-mainloop()
+mainloop()"""
