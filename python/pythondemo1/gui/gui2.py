@@ -89,23 +89,28 @@ from tkinter import ttk
 import tkinter as tk
 
 details=Tk()
-
 details.title("Aadhar ID information Details")
 details.geometry("500x500")
-def enter():
 
-    e1=Entry(details)
-    e2=Entry(details)
-    e1.grid(row=1,column=1)
-    e2.grid(row=2,column=1)
-    
+def sumbit():
+    a=tbEntrya.get()
+    b=tbEntryb.get()
+    labeloutput1(text=a)
+    labeloutput2(text=b)
 
 
-Label(details,text="Enter your name :").grid(row=1,column=0)
-Label(details,text="Enter Last name ").grid(row=2,column=0)
 
+
+labeltitle=Label(details,text="Enter your name :")
+labeltitle.grid(row=1,column=0)
+labeltitle1=Label(details,text="Enter Last name ")
+labeltitle1.grid(row=2,column=0)
+tbEntrya=Entry(details,width=60)
+tbEntrya.grid(row=1,column=1)
+tbEntryb=Entry(details,width=60)
+tbEntryb.grid(row=2,column=1)
 var1=IntVar()
-Checkbutton(details,text="Male",variable=var1).grid(row=3,column=0)
+Radiobutton(details,text="Male",variable=var1).grid(row=3,column=0)
 var2=IntVar()
 Checkbutton(details,text="Female",variable=var2).grid(row=3,column=1)
 var3=IntVar()
@@ -128,7 +133,7 @@ filemenu.add_command(label='Exit', command=details.quit)
 
 
 ttk.Label(details,text="Select Your State",
-              font=("Times New Roman",10)).grid(column =0,row=5,padx=10,pady=25)
+             font=("Times New Roman",10)).grid(column =0,row=5,padx=10,pady=25)
 
 n=tk.StringVar()
 statechoosen =ttk.Combobox(details,width =27,textvariable= n)
@@ -137,9 +142,12 @@ statechoosen =ttk.Combobox(details,width =27,textvariable= n)
 statechoosen['values'] = ("Andhra Pradesh","Arunachal Pradesh ","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli","Daman and Diu","Lakshadweep","National Capital Territory of Delhi","Puducherry")
 statechoosen.grid(column = 1, row = 5) 
 statechoosen.current() 
-
-btnst=Button(details,text="check",command=enter)
+labeloutput1=Label(details,text="").grid(row=10,column=2)
+labeloutput2=Label(details,text="").grid(row=11,column=2)
+btnst=Button(details,text="check",command=sumbit)
 btnst.grid(row=8,column=5)
+btnst=Button(details,text="clear")
+btnst.grid(row=9,column=5)
 
 
 details.mainloop() 
@@ -148,21 +156,21 @@ details.mainloop()
 
 
 
-"""
-mainloop()
+# """
+# mainloop()
 
-from tkinter import *
+# from tkinter import *
      
-root = Tk()
-menu = Menu(root)
-root.config(menu=menu)
-filemenu = Menu(menu)
-menu.add_cascade(label='File', menu=filemenu)
-filemenu.add_command(label='New')
-filemenu.add_command(label='Open...')
-filemenu.add_separator()
-filemenu.add_command(label='Exit', command=root.quit)
-helpmenu = Menu(menu)
-menu.add_cascade(label='Help', menu=helpmenu)
-helpmenu.add_command(label='About')
-mainloop()"""
+# root = Tk()
+# menu = Menu(root)
+# root.config(menu=menu)
+# filemenu = Menu(menu)
+# menu.add_cascade(label='File', menu=filemenu)
+# filemenu.add_command(label='New')
+# filemenu.add_command(label='Open...')
+# filemenu.add_separator()
+# filemenu.add_command(label='Exit', command=root.quit)
+# helpmenu = Menu(menu)
+# menu.add_cascade(label='Help', menu=helpmenu)
+#helpmenu.add_command(label='About')
+#mainloop()

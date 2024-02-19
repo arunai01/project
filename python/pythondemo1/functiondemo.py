@@ -17,6 +17,6 @@ def my_function():
     else :
         print ("not match")
 
-    y=input("Enter the value").split(",")
+    y=input("Enter the value").split(",") 
     print(y)   
 my_function()
