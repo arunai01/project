@@ -109,8 +109,8 @@ tbEntrya=Entry(details,width=60)
 tbEntrya.grid(row=1,column=1)
 tbEntryb=Entry(details,width=60)
 tbEntryb.grid(row=2,column=1)
-var1=IntVar()
-Radiobutton(details,text="Male",variable=var1).grid(row=3,column=0)
+Male=IntVar()
+Radiobutton(details,text="Male",variable=Male).grid(row=3,column=0)
 var2=IntVar()
 Checkbutton(details,text="Female",variable=var2).grid(row=3,column=1)
 var3=IntVar()
@@ -132,15 +132,15 @@ filemenu.add_command(label='Exit', command=details.quit)
 
 
 
-ttk.Label(details,text="Select Your State",
+ttk.Label(details,text="State",
              font=("Times New Roman",10)).grid(column =0,row=5,padx=10,pady=25)
 
 n=tk.StringVar()
 statechoosen =ttk.Combobox(details,width =27,textvariable= n)
 
 #adding combobox drop list down
-statechoosen['values'] = ("Andhra Pradesh","Arunachal Pradesh ","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli","Daman and Diu","Lakshadweep","National Capital Territory of Delhi","Puducherry")
-statechoosen.grid(column = 1, row = 5) 
+statechoosen['values']= ("Andhra Pradesh","Arunachal Pradesh ","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli","Daman and Diu","Lakshadweep","National Capital Territory of Delhi","Puducherry")
+statechoosen.grid(column = 1, row = 5)
 statechoosen.current() 
 labeloutput1=Label(details,text="").grid(row=10,column=2)
 labeloutput2=Label(details,text="").grid(row=11,column=2)
