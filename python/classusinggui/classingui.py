@@ -16,10 +16,10 @@ def DBconnection():
 
 class manuplate:
     def __init__(self):
-        #frametop=Frame(app, bg="black",width=800, height=300, padx=10,pady=10)
-        #frametop.pack(side = TOP)
+        frametop=Frame(app, bg="black",width=800, height=300, padx=10,pady=10)
+        frametop.pack(side = TOP)
         btninsert=Button(app,text="INSERT",command=self.insert)
-        btninsert.grid(padx=10, pady=10)
+        btninsert.grid(padx=10,pady=10)
         #btnupdate=Button(frametop,text="UPDATE").pack(padx=10, pady=10)
         #btndelete=Button(frametop,text="DELETE").pack(padx=10, pady=10)
 
@@ -110,9 +110,9 @@ class manuplate:
 
         e_con=DBconnection()
         result=e_con.cursor()
-        #statement="insert into studentmark_list(Name,age,tamil,English,maths,physics,chemistry,computer_science) value(%s,22,%s,%s,%s,77,%s,%s);"
+        statement="insert into studentmark_list(Name,age,tamil,English,maths,physics,chemistry,computer_science) value(%s,19,%s,%s,%s,88,%s,%s);"
 
-        statement="insert into stdname(a,b,c,d,e,f,g,h) values(" + str(name) + "," + str(age) + ","+str(tamil) + "," + str(english) +","+ str(maths) + "," + str(physics)+","+ str(chemistry) + "," + str(cs)+ ");"
+        #statement="insert into stdname(a,b,c,d,e,f,g,h) values(" + str(name) + "," + str(age) + ","+str(tamil) + "," + str(english) +","+ str(maths) + "," + str(physics)+","+ str(chemistry) + "," + str(cs)+ ");"
         #valuepass=(a,c,d,e,g,h)
         result.execute(statement)
         e_con.commit()
@@ -130,7 +130,6 @@ class manuplate:
 
        
         my.mainloop()
-
 
 
 run=manuplate()
