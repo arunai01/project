@@ -1,14 +1,87 @@
+import os
 from tkinter import *
 import tkinter as tk
-import mysql.connector
 
 
 my=tk.Tk()
+my.title("Student Mark List")
+my.geometry("500x500")
 
-my.title("Marksheet")
-my.geometry("500x700")
+def createtitle():
+    titleImageFrame=tk.Frame(my,width=400,height=600,bg="black")
+    titleImageFrame.pack()
 
-def DBconnection():
+    imgdir=os.path.join(os.path.dirname(__file__),'img')
+    print("Path name is : " + imgdir)
+
+    imageloction=os.path.join(imgdir,'Welcome to +2 Marklist 2024 patch.gif')
+    print("image location is : " + imageloction)
+
+    titleimage=tk.PhotoImage("titleimg",file=os.path.join(imgdir,"Welcome to +2 Marklist 2024 patch.gif"))
+
+
+    lblTitleImage=tk.Label(titleImageFrame, image=titleimage)
+    lblTitleImage.pack()
+
+
+
+
+menubarlist=tk.Menu(my,bg="red")
+filemenu=tk.Menu(menubarlist,tearoff=0)
+menubarlist.add_cascade(label="File",menu=filemenu,underline=0)
+filemenu.add_command(label="New  ",underline=0,accelerator="Ctrl+L")
+filemenu.add_command(label="New Window  ",underline=4,accelerator="Ctrl+Shift+N")
+filemenu.add_command(label="Open   ",underline=0,accelerator="Ctrl+o")
+filemenu.add_command(label="Save  ",underline=0,accelerator="Ctrl+s")
+filemenu.add_command(label="Save As ",underline=5,accelerator="Ctrl+Shift+s")
+filemenu.add_separator()
+filemenu.add_command(label="Page setup")
+filemenu.add_command(label="Print",underline=0,accelerator="Ctrl+p")
+filemenu.add_separator()
+filemenu.add_command(label="Exit",underline=0,command=my.quit)
+
+editmenu=tk.Menu(menubarlist,tearoff=0)
+menubarlist.add_cascade(label="Edit",menu=editmenu)
+
+editmenu.add_command(label="Undo",underline=0,accelerator="Ctrl+z")
+editmenu.add_command(label="Redo",underline=0,accelerator="Ctrl+Shift+z")
+editmenu.add_separator()
+editmenu.add_command(label="Copy",underline=0,accelerator="Ctrl+c")
+editmenu.add_command(label="Cut",underline=1,accelerator="Ctrl+x")
+editmenu.add_command(label="Paste",underline=0,accelerator="Ctrl+v")
+editmenu.add_command(label="Delete",underline=0,accelerator="Del")
+editmenu.add_separator()
+editmenu.add_command(label="Find",underline=0,accelerator="Ctrl+F")
+editmenu.add_command(label="Find Next",underline=5,accelerator="F3")
+editmenu.add_command(label="Replace...",underline=0,accelerator="Ctrl+H")
+editmenu.add_command(label="Go To...",underline=4,accelerator="Ctrl+G")
+editmenu.add_separator()
+editmenu.add_command(label="Select All",underline=0,accelerator="Ctrl+A")
+editmenu.add_command(label="Time/Date",underline=0,accelerator="F5")
+
+formatmenu=tk.Menu(menubarlist,tearoff=0)
+menubarlist.add_cascade(label="Format",menu=formatmenu)
+
+formatmenu.add_command(label="Word Wrap")
+formatmenu.add_command(label="Font...")
+
+viewmenu=tk.Menu(menubarlist,tearoff=0)
+menubarlist.add_cascade(label="View",menu=viewmenu)
+viewmenu.add_command(label="Status Bar")
+
+helpmenu=tk.Menu(menubarlist,tearoff=0)
+menubarlist.add_cascade(label="Help",menu=helpmenu)
+helpmenu.add_command(label="View Help")
+helpmenu.add_separator()
+helpmenu.add_command(label="About Notepad")
+
+
+
+
+my.config(menu=menubarlist)
+
+
+"""def DBconnection():
     dpcon=mysql.connector.connect(
         host="192.168.1.240",
         user="AIBATCH01",
@@ -177,9 +250,9 @@ btnsub=Button(my,text="clear",font=("Batang",14),fg="White",bg="Green",command=c
 
 btnsub=Button(my,text="update",font=("Batang",14),fg="White",bg="Green",command=update).grid(row=10,column=3)
 
-btnsub=Button(my,text="delete",font=("Batang",14),fg="White",bg="Green",command=delete).grid(row=10,column=4)
+btnsub=Button(my,text="delete",font=("Batang",14),fg="White",bg="Green",command=delete).grid(row=10,column=4)"""
 
-manubar=tk.Menu()
+
 
 
 my.mainloop()
