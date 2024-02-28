@@ -39,7 +39,7 @@ class DbManupulute:
 
         return(str(result.rowcount)+"row inserted")
     
-    '''def updatetvalue(self,S_no,name,age,tamil,english,maths,physics,chemistry,computer_science):
+    def updatetvalue(self,S_no,name,age,tamil,english,maths,physics,chemistry,computer_science):
         student_S_no=S_no
         student_name=name
         student_age=age
@@ -53,7 +53,20 @@ class DbManupulute:
         data=self.mydbconnection()
         result=data.cursor()
 
-        stmts1=  "UPDATE studentmark_list SET name=(%s),age=(%s)tamil=(%s)english=(%s)maths=(%s)physics=(%s)chemistry=(%s),computer_science(%s) where S_no=(%s)"  
-        
-        valuepass=(student_name,student_age,std_tamil_mk,std_eng_mk,std_maths_mk,std_phy_mk,std_che_mk,std_cs_mk,student_S_no)'''
+         # Replace CONCAT with regular string concatenation
+        update_query = (
+        "UPDATE students "
+        "SET name = name + %s, age = age + %s, tamil = tamil + %s, "
+        "english = english + %s, maths = maths + %s, "
+        "physics = physics + %s, chemistry = chemistry + %s, "
+        "computer_science = computer_science + %s "
+        "WHERE S_no = %s"
+        )
 
+        values = (student_name, student_age, std_tamil_mk, std_eng_mk, std_maths_mk,
+              std_phy_mk, std_che_mk, std_cs_mk, student_S_no)
+
+        result.execute(update_query, values)
+
+    # Commit the changes
+        data.commit()

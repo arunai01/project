@@ -115,7 +115,8 @@ gettitleimage=PhotoImage("titleimage",file=imgdir1)
 titleImageFrame=Frame(window, bg="black")#, height=200)
 titleImageFrame.pack(padx=10,fill="x")
 
-lblDisplayTitleImage=Label(image=gettitleimage).pack()
+lblDisplayTitleImage=Label(titleImageFrame,image=gettitleimage).pack()
+
 
 
 #adding list tabs
