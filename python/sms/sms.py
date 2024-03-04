@@ -1,10 +1,13 @@
 import os
 from tkinter  import *
+import clipboard
 from tkinter import ttk
 from dpdemo.dpdemo import *
 import mysql.connector
 
 
+def copy_text(event=None):
+      code=text_box.get
 
 window=Tk()
 window.title("Student Mark List")
@@ -36,6 +39,25 @@ def insertdp():
         lplconmsg.config(text=x)
         selectdates()
 
+
+def updatedp():
+        std_S_no=ety_S_no.get()
+        student_name1=ety_stdname1.get()
+        student_age1=ety_stdage1.get()
+        std_tamil_mk1=ety_tamil1.get()
+        std_eng_mk1=ety_eng1.get()
+        std_maths_mk1=ety_maths1.get()
+        std_phy_mk1=ety_phy1.get()
+        std_che_mk1=ety_chemi1.get()
+        std_cs_mk1=ety_cs1.get()
+        
+
+
+
+        x1=mydpcon.updatevalue(std_S_no,student_name1,student_age1,std_tamil_mk1,std_eng_mk1,std_maths_mk1,std_phy_mk1,std_che_mk1,std_cs_mk1)
+        lplconmsg.config(text=x1)
+        selectdates()
+
 def selectdates():
       data=mydpcon.mydbconnection()
       result=data.cursor()
@@ -51,7 +73,6 @@ def selectdates():
             i=i+1
       
       
-
 
 
 
@@ -109,7 +130,7 @@ window.config(menu=menulist)
 
 
 #image add 
-imgdir1=os.path.join((os.path.join(os.path.dirname(__file__),'img')),"Welcome.gif")
+imgdir1=os.path.join((os.path.join(os.path.dirname(__file__),'img')),"banner.gif")
 gettitleimage=PhotoImage("titleimage",file=imgdir1)
 
 titleImageFrame=Frame(window, bg="black")#, height=200)
@@ -192,6 +213,10 @@ ety_cs.grid(pady=10,row=8,column=2)
 btn_insert=Button(titledisplayframeintab,text="Insert",command=insertdp)
 btn_insert.grid(row=9,column=1)
 
+btn_insert=Button(titledisplayframeintab,text="update",command=selectdates)
+btn_insert.grid(row=9,column=4)
+
+
 btn_update=Button(titledisplayframeintab,text="clear")
 btn_update.grid(row=9,column=2)
 
@@ -211,58 +236,60 @@ titledisplayframeintab.pack()
 lpl_insert_title=Label(titledisplayframeintab,text="Update Students Mark")
 lpl_insert_title.grid(pady=10,row=0,columnspan=10)
 
+lpl_S_no=Label(titledisplayframeintab,text="S_no")
+lpl_S_no.grid(pady=10,row=1,column=1)
+ety_S_no=Entry(titledisplayframeintab)
+ety_S_no.grid(pady=10,row=1,column=2)
+
+
 lpl_std_name1=Label(titledisplayframeintab,text="Studente Name")
-lpl_std_name1.grid(pady=10,row=1,column=1)
+lpl_std_name1.grid(pady=10,row=2,column=1)
 ety_stdname1=Entry(titledisplayframeintab)
-ety_stdname1.grid(pady=10,row=1,column=2)
+ety_stdname1.grid(pady=10,row=2,column=2)
 
 lpl_std_age1=Label(titledisplayframeintab,text="Student age")
-lpl_std_age1.grid(pady=10,row=2,column=1)
+lpl_std_age1.grid(pady=10,row=3,column=1)
 ety_stdage1=Entry(titledisplayframeintab)
-ety_stdage1.grid(pady=10,row=2,column=2)
+ety_stdage1.grid(pady=10,row=3,column=2)
 
 
 
 lpl_tamil_mrk1=Label(titledisplayframeintab,text="Tamil")
-lpl_tamil_mrk1.grid(pady=10,row=3,column=1)
+lpl_tamil_mrk1.grid(pady=10,row=4,column=1)
 ety_tamil1=Entry(titledisplayframeintab)
-ety_tamil1.grid(pady=10,row=3,column=2)
+ety_tamil1.grid(pady=10,row=4,column=2)
 
 
 lpl_eng_mrk1=Label(titledisplayframeintab,text="eng")
-lpl_eng_mrk1.grid(pady=10,row=4,column=1)
+lpl_eng_mrk1.grid(pady=10,row=5,column=1)
 ety_eng1=Entry(titledisplayframeintab)
-ety_eng1.grid(pady=10,row=4,column=2)
+ety_eng1.grid(pady=10,row=5,column=2)
 
 lpl_maths_mrk1=Label(titledisplayframeintab,text="maths")
-lpl_maths_mrk1.grid(pady=10,row=5,column=1)
+lpl_maths_mrk1.grid(pady=10,row=6,column=1)
 ety_maths1=Entry(titledisplayframeintab)
-ety_maths1.grid(pady=10,row=5,column=2)
+ety_maths1.grid(pady=10,row=6,column=2)
 
 lpl_phy_mrk1=Label(titledisplayframeintab,text="phy")
-lpl_phy_mrk1.grid(pady=10,row=6,column=1)
+lpl_phy_mrk1.grid(pady=10,row=7,column=1)
 ety_phy1=Entry(titledisplayframeintab)
-ety_phy1.grid(pady=10,row=6,column=2)
+ety_phy1.grid(pady=10,row=7,column=2)
 
 lpl_chemi_mrk1=Label(titledisplayframeintab,text="chemi")
-lpl_chemi_mrk1.grid(pady=10,row=7,column=1)
+lpl_chemi_mrk1.grid(pady=10,row=8,column=1)
 ety_chemi1=Entry(titledisplayframeintab)
-ety_chemi1.grid(pady=10,row=7,column=2)
+ety_chemi1.grid(pady=10,row=8,column=2)
 
 lpl_cs_mrk1=Label(titledisplayframeintab,text="Computer_Science")
-lpl_cs_mrk1.grid(pady=10,row=8,column=1)
+lpl_cs_mrk1.grid(pady=10,row=9,column=1)
 ety_cs1=Entry(titledisplayframeintab)
-ety_cs1.grid(pady=10,row=8,column=2)
-
-lpl_S_no=Label(titledisplayframeintab,text="S_no")
-lpl_S_no.grid(pady=10,row=9,column=1)
-ety_S_no=Entry(titledisplayframeintab)
-ety_S_no.grid(pady=10,row=9,column=2)
+ety_cs1.grid(pady=10,row=9,column=2)
 
 
 
 
-btn_insert=Button(titledisplayframeintab,text="Update",command=insertdp)
+
+btn_insert=Button(titledisplayframeintab,text="Update",command=updatedp)
 btn_insert.grid(row=10,column=1)
 
 btn_update=Button(titledisplayframeintab,text="clear")
@@ -271,6 +298,8 @@ btn_update.grid(row=10,column=2)
 btn_clear=Button(titledisplayframeintab,text="Exit",command=Exit)
 btn_clear.grid(row=10,column=3)
 
+resultframe=Frame(titledisplayframeintab,width=800,height=600,bg="black")
+resultframe.grid(row=11,columnspan=6)
 
 
 

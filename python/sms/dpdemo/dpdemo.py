@@ -39,34 +39,41 @@ class DbManupulute:
 
         return(str(result.rowcount)+"row inserted")
     
-    def updatetvalue(self,S_no,name,age,tamil,english,maths,physics,chemistry,computer_science):
-        student_S_no=S_no
-        student_name=name
-        student_age=age
-        std_tamil_mk=tamil
-        std_eng_mk=english
-        std_maths_mk=maths
-        std_phy_mk=physics
-        std_che_mk=chemistry
-        std_cs_mk=computer_science
+    
 
-        data=self.mydbconnection()
-        result=data.cursor()
 
-         # Replace CONCAT with regular string concatenation
-        update_query = (
-        "UPDATE students "
-        "SET name = name + %s, age = age + %s, tamil = tamil + %s, "
-        "english = english + %s, maths = maths + %s, "
-        "physics = physics + %s, chemistry = chemistry + %s, "
-        "computer_science = computer_science + %s "
-        "WHERE S_no = %s"
+    def updatevalue(self, S_no, Name, age, tamil, English, maths, physics, chemistry, computer_science):
+        # Assuming you have a database connection stored in self.connection
+
+        data1=self.mydbconnection()
+        result1=data1.cursor()
+
+
+        # Constructing SQL update statement with string concatenation
+        update1 = (
+            "UPDATE ai__arun.studentmark_list "
+            "SET "
+            "`S_no` = " + str(S_no) + ", "
+            "`Name` = '" + Name + "', "
+            "`age` = " + str(age) + ", "
+            "`tamil` = " + str(tamil) + ", "
+            "`English` = " + str(English) + ", "
+            "`maths` = " + str(maths) + ", "
+            "`physics` = " + str(physics) + ", "
+            "`chemistry` = " + str(chemistry) + ", "
+            "`computer_science` = " + str(computer_science) + " "
+            "WHERE `S_no` = " + str(S_no)
         )
 
-        values = (student_name, student_age, std_tamil_mk, std_eng_mk, std_maths_mk,
-              std_phy_mk, std_che_mk, std_cs_mk, student_S_no)
+        # Create a cursor and execute the update query
+        #cursor= self.DBconnection.cursor()
+        result1.execute(update1)
 
-        result.execute(update_query, values)
+        print(update1)
 
-    # Commit the changes
-        data.commit()
+        data1.commit()
+
+        # Commit changes to the database
+        #self.connection.commit()
+
+        
