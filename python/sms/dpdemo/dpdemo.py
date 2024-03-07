@@ -76,4 +76,24 @@ class DbManupulute:
         # Commit changes to the database
         #self.connection.commit()
 
+    def delevalue(self,S_no):
+        data2=self.mydbconnection()
+        result2=data2.cursor()
+
+
+        delete_stmts=(
+            "DELETE FROM studentmark_list "
+            "WHERE `S_no` = " + str(S_no)
+
+        )
+        result2.execute(delete_stmts)
+        print(delete_stmts)
+
+        data2.commit()
+
+
+
+
+
+
         

@@ -6,8 +6,8 @@ from dpdemo.dpdemo import *
 import mysql.connector
 
 
-def copy_text(event=None):
-      code=text_box.get
+# def copy_text(event=None):
+#       code=text_box.get
 
 window=Tk()
 window.title("Student Mark List")
@@ -57,6 +57,14 @@ def updatedp():
         x1=mydpcon.updatevalue(std_S_no,student_name1,student_age1,std_tamil_mk1,std_eng_mk1,std_maths_mk1,std_phy_mk1,std_che_mk1,std_cs_mk1)
         lplconmsg.config(text=x1)
         selectdates()
+
+
+def deletedp():
+      std_S_no=ety_S_no.get()
+
+      x2=mydpcon.delevalue(std_S_no)
+      lplconmsg.config(text=x2)
+      selectdates()
 
 def selectdates():
       data=mydpcon.mydbconnection()
@@ -213,7 +221,7 @@ ety_cs.grid(pady=10,row=8,column=2)
 btn_insert=Button(titledisplayframeintab,text="Insert",command=insertdp)
 btn_insert.grid(row=9,column=1)
 
-btn_insert=Button(titledisplayframeintab,text="update",command=selectdates)
+btn_insert=Button(titledisplayframeintab,text="update")
 btn_insert.grid(row=9,column=4)
 
 
@@ -228,13 +236,14 @@ lplconmsg.grid(row=10,column=2,pady=20)
 
 resultframe=Frame(titledisplayframeintab,width=800,height=600,bg="black")
 resultframe.grid(row=11,columnspan=6)
+selectdates()
 
 #update
 titledisplayframeintab=Frame(tabupdate,width=window.winfo_screenwidth(), height=window.winfo_screenheight())
 titledisplayframeintab.pack()
 
-lpl_insert_title=Label(titledisplayframeintab,text="Update Students Mark")
-lpl_insert_title.grid(pady=10,row=0,columnspan=10)
+lpl_update_title=Label(titledisplayframeintab,text="Update Students Mark")
+lpl_update_title.grid(pady=10,row=0,columnspan=10)
 
 lpl_S_no=Label(titledisplayframeintab,text="S_no")
 lpl_S_no.grid(pady=10,row=1,column=1)
@@ -300,6 +309,42 @@ btn_clear.grid(row=10,column=3)
 
 resultframe=Frame(titledisplayframeintab,width=800,height=600,bg="black")
 resultframe.grid(row=11,columnspan=6)
+
+selectdates()
+
+
+#delete
+
+titledisplayframeintab=Frame(tabdelete,width=window.winfo_screenwidth(),height=window.winfo_screenheight())
+titledisplayframeintab.pack()
+
+lpl_delete_title=Label(titledisplayframeintab,text="Delete Students Mark",font=("Times New Roman",14))
+lpl_delete_title.grid(pady=10,row=0,column=0)
+
+
+std_S_no=Label(titledisplayframeintab,text="S_no",font=("Times New Roman",14))
+std_S_no.grid(row=1,column=0)
+ety_S_no=Entry(titledisplayframeintab)
+ety_S_no.grid(row=1,column=1)
+
+
+#delete button
+
+
+dlt_btn=Button(titledisplayframeintab,text="Delete",command=deletedp)
+dlt_btn.grid(padx=15,pady=50,row=10,column=0)
+
+clr_btn=Button(titledisplayframeintab,text="Clear",command=Exit)
+clr_btn.grid(row=10,column=1)
+
+selectdates()
+
+
+
+
+
+
+
 
 
 
